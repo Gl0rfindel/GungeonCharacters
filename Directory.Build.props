@@ -1,0 +1,9 @@
+<Project>
+    <Import Project="local.props" Condition="Exists('local.props')" />
+
+    <PropertyGroup>
+        <Deterministic>true</Deterministic>
+        <EtgManagedPath Condition="'$(EtgManagedPath)' == ''">C:\path\to\my\etg\managed</EtgManagedPath>
+        <EtgManagedPath Condition="!$(EtgManagedPath.EndsWith('\'))">$(EtgManagedPath)\</EtgManagedPath>
+    </PropertyGroup>
+</Project>
